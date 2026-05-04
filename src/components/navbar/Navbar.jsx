@@ -10,13 +10,13 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Shop", path: "/" },
+    { name: "Shop", path: "/shop" },
     { name: "About", path: "/" },
     { name: "Contact", path: "/" },
   ];
 
   return (
-    <nav className="w-full shadow-md bg-white">
+    <nav className="w-full  bg-white fixed top-0 left-0  z-50 ">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           

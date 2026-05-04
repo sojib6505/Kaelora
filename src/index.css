@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
-
 @theme {
   --color-primary: #000814;
   --color-gray-light: #343a40;
-  --color-red-primary: #c1121f;
+  --color-red-primary:#F71915;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
 }
