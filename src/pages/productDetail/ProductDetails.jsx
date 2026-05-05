@@ -1,22 +1,29 @@
 import { useParams, useNavigate } from "react-router";
 import products from "../../data/products";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../../components/productCard/ProductCard";
 import { Phone, ShoppingCart } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
 import { GiBuyCard } from "react-icons/gi";
 import { FaBuysellads } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
+import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const product = products.find((p) => p.id === Number(id));
-
   const [quantity, setQuantity] = useState(1);
 
   const [showFull, setShowFull] = useState(false);
+  const product = products.find((p) => p.id === Number(id));
+  const [selectImage, setSelectImage] = useState(
+    () => products.find((p) => p.id === Number(id))?.image?.[0] ?? "",
+  );
+
+  useEffect(() => {
+    setSelectImage(product?.image?.[0] ?? "");
+  }, [id]);
 
   const words = product.description.split(" ");
   const shortText = words.slice(0, 20).join(" ");
@@ -42,15 +49,31 @@ export default function ProductDetails() {
     .slice(0, 4);
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-10 mt-16.5">
-      <div className="grid md:grid-cols-2 gap-10 ">
-        {/* Image */}
-        <div className="bg-gray-50 rounded-xl overflow-hidden">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover"
-          />
+    <>
+    <ScrollToTop/>
+     <section className="max-w-6xl mx-auto px-4 py-10 mt-16.5">
+      <div className="grid md:grid-cols-2 gap-2">
+        <div className="flex flex-col-reverse gap-3 md:flex-row md:gap-5">
+          <div className="flex gap-2 md:flex-col ">
+            {product.image.map((img, idx) => (
+              <img
+                key={idx}
+                src={img}
+                onClick={() => setSelectImage(img)}
+                className={`w-16 h-16 object-cover rounded-lg cursor-pointer border-2 ${
+                  selectImage === img ? "border-red-500" : "border-gray-200"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="bg-gray-50  rounded-xl overflow-hidden ">
+            {/* Image */}
+            <img
+              src={selectImage}
+              alt={product.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         {/* Info */}
@@ -72,6 +95,23 @@ export default function ProductDetails() {
 
           <div className="mt-4 text-2xl font-bold">
             ৳{product.price.toLocaleString()}
+          </div>
+
+          {/* size */}
+          <div className="flex gap-2 items-center">
+            <span className="font-serif text-xl md:text-2xl font-bold">
+              SIZE :
+            </span>
+            <div className="flex gap-2">
+              {product.size.map((s, i) => (
+                <p
+                  className="font-serif text-sm md:text-xl font-semibold border border-gray-light h-6 w-6 md:h-10 md:w-10 text-center rounded-sm hover:bg-gray-light hover:text-white"
+                  key={i}
+                >
+                  {s}
+                </p>
+              ))}
+            </div>
           </div>
 
           {/* Quantity */}
@@ -99,7 +139,7 @@ export default function ProductDetails() {
               <ShoppingCart /> Add to Cart
             </button>
 
-            <button className="flex-1 flex justify-center items-center gap-2 border py-3 rounded-lg hover:bg-red-primary hover:text-white">
+            <button onClick={()=>{navigate('/checkout')}} className="flex-1 flex justify-center items-center gap-2 border py-3 rounded-lg hover:bg-red-primary hover:text-white animate-jump">
               <MdPayment size={20} /> Buy Now
             </button>
 
@@ -138,5 +178,6 @@ export default function ProductDetails() {
         </div>
       )}
     </section>
+    </>
   );
 }

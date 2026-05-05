@@ -1,95 +1,469 @@
-import img_1 from '../assets/images/model1.png'
-import img_2 from '../assets/images/product2.jpeg'
-import img_3 from '../assets/images/product3.jpeg'
+import img_1 from "../assets/images/model1.png";
+import img_2 from "../assets/images/product2.jpeg";
+import img_3 from "../assets/images/product3.jpeg";
 const products = [
   {
     id: 1,
     name: "Women's Exclusive Zardosi Details Silk Shalwar Kameez",
-    description: "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
     price: 6995,
     rating: 5,
     reviews: 4,
     badge: "Premium",
-    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+    image: [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+
     color: "Pink",
+      size:[
+      30,36,40
+    ]
   },
   {
     id: 2,
     name: "Women's Exclusive Lace Silk Mixed Shalwar Kameez",
-    description: "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
     price: 5650,
     rating: 5,
     reviews: 3,
     badge: "New",
-    image: img_1,
+    image: [
+      img_1
+    ],
     color: "White",
+      size:[
+      30,36,40
+    ]
   },
   {
     id: 3,
     name: "Women's Embroidered Georgette Anarkali Suit",
-    description: "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
     price: 4850,
     rating: 5,
     reviews: 6,
     badge: "Trending",
-    image: img_3,
+    image: [
+      img_3
+    ],
     color: "Maroon",
+      size:[
+      30,36,40
+    ]
   },
   {
     id: 4,
     name: "Women's Printed Cotton Lawn Shalwar Kameez",
-    description: "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
     price: 2200,
     rating: 4,
     reviews: 9,
     badge: "New",
-    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&q=80",
+    image: [
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&q=80",
+      img_1,
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+    ],
     color: "Teal",
+      size:[
+      30,36,40
+    ]
   },
   {
     id: 5,
     name: "Women's Net Dupatta Embellished Party Wear Dress",
-    description: "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
     price: 7500,
     rating: 5,
     reviews: 2,
     badge: "Premium",
-    image: "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=400&q=80",
+    image: [
+      "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=400&q=80",
+      img_3,
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+    ],
     color: "Gold",
+      size:[
+      30,36,40
+    ]
   },
   {
     id: 6,
     name: "Women's Casual Linen Kurti With Palazzo Pants",
-    description: "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
     price: 1950,
     rating: 4,
     reviews: 11,
     badge: "Sale",
-    image: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    image: [
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
     color: "Olive",
+    size:[
+      30,36,40
+    ]
   },
-    {
+  {
     id: 7,
     name: "Women's Exclusive Zardosi Details Silk Shalwar Kameez",
-    description: "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
     price: 6995,
     rating: 5,
     reviews: 4,
     badge: "Premium",
-    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+    image: [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
     color: "Pink",
+      size:[
+      30,36,40
+    ]
   },
   {
     id: 8,
     name: "Women's Exclusive Lace Silk Mixed Shalwar Kameez",
-    description: "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
     price: 5650,
     rating: 5,
     reviews: 3,
     badge: "New",
-    image: img_2,
+    image: [
+      img_2,
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
     color: "White",
+      size:[
+      30,36,40
+    ]
+  },
+    {
+    id: 1,
+    name: "Women's Exclusive Zardosi Details Silk Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 6995,
+    rating: 5,
+    reviews: 4,
+    badge: "Premium",
+    image: [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+
+    color: "Pink",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 2,
+    name: "Women's Exclusive Lace Silk Mixed Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 5650,
+    rating: 5,
+    reviews: 3,
+    badge: "New",
+    image: [
+      img_1
+    ],
+    color: "White",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 3,
+    name: "Women's Embroidered Georgette Anarkali Suit",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 4850,
+    rating: 5,
+    reviews: 6,
+    badge: "Trending",
+    image: [
+      img_3
+    ],
+    color: "Maroon",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 4,
+    name: "Women's Printed Cotton Lawn Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 2200,
+    rating: 4,
+    reviews: 9,
+    badge: "New",
+    image: [
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&q=80",
+      img_1,
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+    ],
+    color: "Teal",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 5,
+    name: "Women's Net Dupatta Embellished Party Wear Dress",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 7500,
+    rating: 5,
+    reviews: 2,
+    badge: "Premium",
+    image: [
+      "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=400&q=80",
+      img_3,
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+    ],
+    color: "Gold",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 6,
+    name: "Women's Casual Linen Kurti With Palazzo Pants",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 1950,
+    rating: 4,
+    reviews: 11,
+    badge: "Sale",
+    image: [
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+    color: "Olive",
+    size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 7,
+    name: "Women's Exclusive Zardosi Details Silk Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 6995,
+    rating: 5,
+    reviews: 4,
+    badge: "Premium",
+    image: [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+    color: "Pink",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 8,
+    name: "Women's Exclusive Lace Silk Mixed Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 5650,
+    rating: 5,
+    reviews: 3,
+    badge: "New",
+    image: [
+      img_2,
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+    color: "White",
+      size:[
+      30,36,40
+    ]
+  },
+    {
+    id: 1,
+    name: "Women's Exclusive Zardosi Details Silk Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 6995,
+    rating: 5,
+    reviews: 4,
+    badge: "Premium",
+    image: [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+
+    color: "Pink",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 2,
+    name: "Women's Exclusive Lace Silk Mixed Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 5650,
+    rating: 5,
+    reviews: 3,
+    badge: "New",
+    image: [
+      img_1
+    ],
+    color: "White",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 3,
+    name: "Women's Embroidered Georgette Anarkali Suit",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 4850,
+    rating: 5,
+    reviews: 6,
+    badge: "Trending",
+    image: [
+      img_3
+    ],
+    color: "Maroon",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 4,
+    name: "Women's Printed Cotton Lawn Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 2200,
+    rating: 4,
+    reviews: 9,
+    badge: "New",
+    image: [
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&q=80",
+      img_1,
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+    ],
+    color: "Teal",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 5,
+    name: "Women's Net Dupatta Embellished Party Wear Dress",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 7500,
+    rating: 5,
+    reviews: 2,
+    badge: "Premium",
+    image: [
+      "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=400&q=80",
+      img_3,
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+    ],
+    color: "Gold",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 6,
+    name: "Women's Casual Linen Kurti With Palazzo Pants",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 1950,
+    rating: 4,
+    reviews: 11,
+    badge: "Sale",
+    image: [
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+    color: "Olive",
+    size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 7,
+    name: "Women's Exclusive Zardosi Details Silk Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 6995,
+    rating: 5,
+    reviews: 4,
+    badge: "Premium",
+    image: [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+    color: "Pink",
+      size:[
+      30,36,40
+    ]
+  },
+  {
+    id: 8,
+    name: "Women's Exclusive Lace Silk Mixed Shalwar Kameez",
+    description:
+      "Premium quality dress crafted with soft, breathable fabric to ensure all-day comfort and elegance. Perfect for both casual outings and special occasions, this dress combines modern style with timeless design.",
+    price: 5650,
+    rating: 5,
+    reviews: 3,
+    badge: "New",
+    image: [
+      img_2,
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80",
+    ],
+    color: "White",
+      size:[
+      30,36,40
+    ]
   },
 ];
 
-export default products
+export default products;

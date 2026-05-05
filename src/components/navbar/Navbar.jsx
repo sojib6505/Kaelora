@@ -46,7 +46,7 @@ export default function Navbar() {
             <Search className="cursor-pointer hover:text-red-primary" />
 
             {/* Profile (hidden on mobile) */}
-            <User className=" cursor-pointer hover:text-red-primary" />
+           <Link to='/auth'> <User className=" cursor-pointer hover:text-red-primary" /></Link>
 
             <ShoppingCart className="cursor-pointer hover:text-red-primary" />
           </div>

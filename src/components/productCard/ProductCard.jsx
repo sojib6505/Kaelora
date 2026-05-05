@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const StarRating = ({ rating, reviews }) => (
   <div className="flex items-center gap-1.5 mt-1">
@@ -32,8 +32,10 @@ export default function ProductCard({ product }) {
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [hovered, setHovered] = useState(false);
 
+  const navigate = useNavigate()
+
   return (
-    <Link to={`/product/${product.id}`} >
+    
       <div
         className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
         onMouseEnter={() => setHovered(true)}
@@ -41,11 +43,13 @@ export default function ProductCard({ product }) {
       >
         {/* Image */}
         <div className="relative overflow-hidden bg-gray-50 aspect-3/4">
-          <img
+         <Link to={`/product/${product.id}`}>
+            <img
             src={product.image}
             alt={product.name}
             className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
+         </Link>
 
           {/* Badge */}
           <span
@@ -85,7 +89,7 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* Info */}
-        <div className="p-3.5">
+        <div onClick={()=>{navigate(`/product/${product.id}`)}} className="p-3.5">
           <h3 className="text-[13px] font-medium line-clamp-2 min-h-9">
             {product.name}
           </h3>
@@ -97,6 +101,6 @@ export default function ProductCard({ product }) {
           </div>
         </div>
       </div>
-    </Link>
+    
   );
 }

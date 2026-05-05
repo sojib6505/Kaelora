@@ -19,3 +19,24 @@
     font-family: "Playfair Display", serif;
   }
 }
+
+
+@layer utilities {
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .animate-jump {
+    animation: jump 1s ease-in-out infinite;
+  }
+
+  /* optional: softer version */
+  .animate-jump-soft {
+    animation: jump 1.5s ease-in-out infinite;
+  }
+}
