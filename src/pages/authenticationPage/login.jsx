@@ -8,7 +8,7 @@ import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 
-export default function login() {
+export default function Login() {
     const [showPassword,setShowPassword] = useState(false)
     const {login} = useAuth()
     console.log(login)

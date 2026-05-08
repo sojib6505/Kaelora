@@ -4,9 +4,10 @@ import Home from "../pages/home/Home";
 import AllProduct from "../pages/allProducts/AllProduct";
 import ProductDetails from "../pages/productDetail/ProductDetails";
 import AuthenticationLayout from "../layouts/AuthenticationLayout";
-import login from "../pages/authenticationPage/login";
 import Registration from "../pages/authenticationPage/Registration";
 import Checkout from "../pages/order/Checkout";
+import Login from "../pages/authenticationPage/Login";
+
 
 
 
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     },
     {path:'auth',Component:AuthenticationLayout,
         children:[
-            {index:true,Component: login},
+            {index:true,Component: Login},
             {path:'sign_up', Component: Registration}
         ]
     }
