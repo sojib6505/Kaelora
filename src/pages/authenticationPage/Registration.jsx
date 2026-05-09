@@ -36,7 +36,7 @@ export default function Registration() {
           },
         },
       );
-      console.log("✅ DB save success:", res.data);
+      console.log("DB save success:", res.data);
     } catch (err) {
       console.error(" Status:", err.response?.status);
       console.error(" Message:", err.response?.data);

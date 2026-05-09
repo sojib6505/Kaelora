@@ -7,25 +7,43 @@ import AuthenticationLayout from "../layouts/AuthenticationLayout";
 import Registration from "../pages/authenticationPage/Registration";
 import Checkout from "../pages/order/Checkout";
 import Login from "../pages/authenticationPage/Login";
-
-
-
+import AdminLayout from "../layouts/AdminLayouts";
+import AdminDashboard from "../pages/admin/Admindashboard";
+import AdminProducts from "../pages/admin/AdminProducts";
+import AdminOrders from "../pages/admin/AdminOrders";
+import { AdminUsers } from "../pages/admin/AdminUsers";
+import { AdminBanners } from "../pages/admin/AdminBanners";
 
 const router = createBrowserRouter([
-    {path:'/',Component:MainLayouts,
-        children:[
-            {index:true, Component:Home},
-            {path:'/shop', Component:AllProduct},
-            { path: "/product/:id",element: <ProductDetails/>},
-            {path:"/checkout", Component:Checkout }
-        ]
-    },
-    {path:'auth',Component:AuthenticationLayout,
-        children:[
-            {index:true,Component: Login},
-            {path:'sign_up', Component: Registration}
-        ]
-    }
-])
+  {
+    path: "/",
+    Component: MainLayouts,
+    children: [
+      { index: true, Component: Home },
+      { path: "/shop", Component: AllProduct },
+      { path: "/product/:id", element: <ProductDetails /> },
+      { path: "/checkout", Component: Checkout },
+    ],
+  },
+  {
+    path: "auth",
+    Component: AuthenticationLayout,
+    children: [
+      { index: true, Component: Login },
+      { path: "sign_up", Component: Registration },
+    ],
+  },
+  {
+    path: "admin",
+    Component: AdminLayout,
+    children: [
+      { index: true, Component: AdminDashboard },
+      { path: "products", Component: AdminProducts },
+      { path: "orders", Component: AdminOrders },
+      { path: "users", Component: AdminUsers },
+      { path: "banners", Component: AdminBanners },
+    ],
+  },
+]);
 
 export default router;
