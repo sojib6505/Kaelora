@@ -20,7 +20,7 @@ export default function Navbar() {
   const dropdownRef = useRef(null);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-  const { cartCount } = useCart()
+  const { cartCount } = useCart();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -140,14 +140,14 @@ export default function Navbar() {
               </Link>
             )}
 
-            <div className="relative">
+            <Link to="/cart" className="relative">
               <ShoppingCart className="cursor-pointer hover:text-red-primary" />
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 text-white text-[10px] rounded-full flex items-center justify-center font-bold">
                   {cartCount}
                 </span>
               )}
-            </div>
+            </Link>
           </div>
         </div>
       </div>

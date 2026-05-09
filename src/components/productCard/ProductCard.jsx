@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import useCart from "../../hooks/useCart";
 
-const StarRating = ({ rating, reviews }) => (
-  <div className="flex items-center gap-1.5 mt-1">
+const StarRating = ({ rating }) => {
+
+  return(
+    <div className="flex items-center gap-1.5 mt-1">
     <div className="flex">
       {[1, 2, 3, 4, 5].map((star) => (
         <svg
@@ -18,9 +20,10 @@ const StarRating = ({ rating, reviews }) => (
         </svg>
       ))}
     </div>
-    <span className="text-xs text-gray-500">{reviews} reviews</span>
+    {/* <span className="text-xs text-gray-500">{review} reviews</span> */}
   </div>
-);
+  )
+}
 
 const badgeStyles = {
   New: "bg-emerald-50 text-emerald-700 border border-emerald-200",
@@ -52,9 +55,9 @@ export default function ProductCard({ product }) {
     >
       {/* Image */}
       <div className="relative overflow-hidden bg-gray-50 aspect-3/4">
-        <Link to={`/product/${product.id}`}>
+        <Link to={`/product/${product._id}`}>
           <img
-            src={product.image}
+            src={product.images?.[0].url || "/placeholer.jpg"}
             alt={product.name}
             className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
@@ -108,7 +111,7 @@ export default function ProductCard({ product }) {
       {/* Info */}
       <div
         onClick={() => {
-          navigate(`/product/${product.id}`);
+          navigate(`/product/${product._id}`);
         }}
         className="p-3.5"
       >
@@ -118,8 +121,13 @@ export default function ProductCard({ product }) {
 
         <StarRating rating={product.rating} reviews={product.reviews} />
 
-        <div className="mt-2 text-base font-bold">
-          ৳{product.price.toLocaleString()}
+        <div className="mt-2 text-base font-bold flex items-center gap-5">
+          <span>
+            ৳{(product.discountPrice > 0 ? product.discountPrice : product.price).toLocaleString()}
+          </span>
+           <span className="text-gray-400 line-through text-lg">
+            ৳{product.price }
+          </span>
         </div>
       </div>
     </div>

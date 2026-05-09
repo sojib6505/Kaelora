@@ -71,8 +71,7 @@ export default function AdminProducts() {
     setForm({
       name: product.name,
       description: product.description,
-     category: category.price,
-      price: product.price,
+     category: product.category,
       discountPrice: product.discountPrice || "",
       rating: product.rating,
       review: product.review,
@@ -367,7 +366,7 @@ export default function AdminProducts() {
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">
-                    Review *
+                    Reviews *
                   </label>
                   <input
                     placeholder="type number 3/6/10"

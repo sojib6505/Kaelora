@@ -13,6 +13,7 @@ import AdminProducts from "../pages/admin/AdminProducts";
 import AdminOrders from "../pages/admin/AdminOrders";
 import { AdminUsers } from "../pages/admin/AdminUsers";
 import { AdminBanners } from "../pages/admin/AdminBanners";
+import CartPage from "../pages/cart/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: "/shop", Component: AllProduct },
       { path: "/product/:id", element: <ProductDetails /> },
       { path: "/checkout", Component: Checkout },
+      { path: "/cart", Component: CartPage }
     ],
   },
   {
