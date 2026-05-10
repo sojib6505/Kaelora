@@ -7,7 +7,6 @@ import Registration from "../pages/authenticationPage/Registration";
 import Checkout from "../pages/order/Checkout";
 import Login from "../pages/authenticationPage/Login";
 import AdminLayout from "../layouts/AdminLayouts";
-
 import AdminProducts from "../pages/admin/AdminProducts";
 import AdminOrders from "../pages/admin/AdminOrders";
 import { AdminUsers } from "../pages/admin/AdminUsers";
@@ -15,6 +14,7 @@ import { AdminBanners } from "../pages/admin/AdminBanners";
 import CartPage from "../pages/cart/CartPage";
 import MyOrders from "../pages/order/MyOrders";
 import ProductDetails from "../pages/productDetail/ProductDetails";
+import AdminDashboard from "../pages/admin/Admindashboard";
 
 const router = createBrowserRouter([
   {
