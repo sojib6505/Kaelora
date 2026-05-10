@@ -7,7 +7,7 @@ import Registration from "../pages/authenticationPage/Registration";
 import Checkout from "../pages/order/Checkout";
 import Login from "../pages/authenticationPage/Login";
 import AdminLayout from "../layouts/AdminLayouts";
-import AdminDashboard from "../pages/admin/Admindashboard";
+
 import AdminProducts from "../pages/admin/AdminProducts";
 import AdminOrders from "../pages/admin/AdminOrders";
 import { AdminUsers } from "../pages/admin/AdminUsers";
