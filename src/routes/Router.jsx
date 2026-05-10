@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router";
 import MainLayouts from "../layouts/MainLayouts";
 import Home from "../pages/home/Home";
 import AllProduct from "../pages/allProducts/AllProduct";
-import ProductDetails from "../pages/productDetail/ProductDetails";
 import AuthenticationLayout from "../layouts/AuthenticationLayout";
 import Registration from "../pages/authenticationPage/Registration";
 import Checkout from "../pages/order/Checkout";
@@ -15,6 +14,7 @@ import { AdminUsers } from "../pages/admin/AdminUsers";
 import { AdminBanners } from "../pages/admin/AdminBanners";
 import CartPage from "../pages/cart/CartPage";
 import MyOrders from "../pages/order/MyOrders";
+import ProductDetails from "../pages/productDetail/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       { path: "/shop", Component: AllProduct },
-      { path: "/product/:id", element: <ProductDetails /> },
+      { path: "/product/:id", Component:ProductDetails },
       { path: "/checkout", Component: Checkout },
       { path: "/cart", Component: CartPage },
       { path: "/orders", Component: MyOrders }

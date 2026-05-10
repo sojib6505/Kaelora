@@ -44,7 +44,7 @@ export default function Login() {
     try {
       const result = await googleSignIn();
 
-      await saveUserToDB(result.user); // 🔥 missing part
+      await saveUserToDB(result.user); 
 
       navigate("/");
     } catch (error) {
