@@ -14,7 +14,8 @@ import { AdminBanners } from "../pages/admin/AdminBanners";
 import CartPage from "../pages/cart/CartPage";
 import MyOrders from "../pages/order/MyOrders";
 import ProductDetails from "../pages/productDetail/ProductDetails";
-import AdminDashboard from "../pages/admin/Admindashboard";
+import AdminDashboard from "../pages/admin/AdminDashboard";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       { path: "banners", Component: AdminBanners },
     ],
   },
+  {
+  path: "*",
+  Component: ErrorPage
+}
 ]);
 
 export default router;
