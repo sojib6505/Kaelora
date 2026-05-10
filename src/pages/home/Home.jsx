@@ -11,7 +11,7 @@ export default function Home() {
         <ScrollToTop/>
         <HeroSlider/>
         <NewArrivals/>
-        <Features/>
+        <Features/>       
     </div>
   )
 }
