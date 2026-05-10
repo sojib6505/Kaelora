@@ -9,6 +9,7 @@ import {
   LogOut,
   Package,
   ChevronDown,
+  Package2,
 } from "lucide-react";
 import Logo from "../../utils/Logo";
 import useAuth from "../../hooks/useAuth";
@@ -80,7 +81,9 @@ export default function Navbar() {
 
           {/* RIGHT ICONS */}
           <div className="flex items-center gap-4">
-            <Search className="cursor-pointer hover:text-red-primary" />
+            <Link to="/orders">
+              <Package2 className="cursor-pointer hover:text-red-primary" />
+            </Link>
 
             {/* Profile */}
             {user ? (

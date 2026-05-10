@@ -14,6 +14,7 @@ import AdminOrders from "../pages/admin/AdminOrders";
 import { AdminUsers } from "../pages/admin/AdminUsers";
 import { AdminBanners } from "../pages/admin/AdminBanners";
 import CartPage from "../pages/cart/CartPage";
+import MyOrders from "../pages/order/MyOrders";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,8 @@ const router = createBrowserRouter([
       { path: "/shop", Component: AllProduct },
       { path: "/product/:id", element: <ProductDetails /> },
       { path: "/checkout", Component: Checkout },
-      { path: "/cart", Component: CartPage }
+      { path: "/cart", Component: CartPage },
+      { path: "/orders", Component: MyOrders }
     ],
   },
   {

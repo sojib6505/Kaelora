@@ -110,11 +110,11 @@ export default function Checkout() {
             country: "Bangladesh",
           },
           paymentMethod: "cod",
+          shippingCost: delivery, 
           note: form.note,
         },
         { headers },
       );
-
       // Cart refresh
       if (user) loadDBCart();
 
@@ -127,9 +127,9 @@ export default function Checkout() {
       }).then(() => {
         // localStorage cart clear (guest user)
         if (!user) {
-          localStorage.removeItem("cart"); 
+          localStorage.removeItem("cart");
         }
-        navigate("/");
+        navigate("/orders", { state: { order: res.data.order } });
       });
     } catch (err) {
       const msg = err.response?.data?.message || "কিছু একটা সমস্যা হয়েছে।";
@@ -274,7 +274,7 @@ export default function Checkout() {
           </div>
 
           <div className="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5 flex gap-4 items-start">
-            <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
               <svg
                 width="20"
                 height="20"
@@ -308,7 +308,7 @@ export default function Checkout() {
             <div className="space-y-3 max-h-60 overflow-y-auto">
               {orderItems.map((item, i) => (
                 <div key={i} className="flex gap-3">
-                  <div className="relative flex-shrink-0">
+                  <div className="relative shrink-0">
                     <img
                       src={item.image || "/placeholder.jpg"}
                       alt={item.name}
@@ -326,7 +326,7 @@ export default function Checkout() {
                       ৳{item.price} × {item.quantity}
                     </p>
                   </div>
-                  <p className="text-sm font-semibold text-gray-800 flex-shrink-0">
+                  <p className="text-sm font-semibold text-gray-800 shrink-0">
                     ৳{(item.price * item.quantity).toLocaleString()}
                   </p>
                 </div>

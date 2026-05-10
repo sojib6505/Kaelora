@@ -15,8 +15,8 @@ export default function CartPage() {
     const price = item.price || item.product?.price || 0;
     return sum + price * item.quantity;
   }, 0);
-  const shippingCost = subtotal >= 1000 ? 0 : 80;
-  const total = subtotal + shippingCost;
+
+  const total = subtotal;
 
   const getItemDetails = (item) => ({
     id: item.product?._id || item.productId,
@@ -38,14 +38,16 @@ export default function CartPage() {
         const res = await axios.put(
           `${import.meta.env.VITE_API_URL}/cart/update`,
           { productId: details.id, quantity: newQty },
-          { headers: { Authorization: `Bearer ${token}` } }
+          { headers: { Authorization: `Bearer ${token}` } },
         );
         setCart(res.data.cart?.items || []);
-      } catch (err) { console.error(err); }
+      } catch (err) {
+        console.error(err);
+      }
     } else {
       const local = JSON.parse(localStorage.getItem("cart") || "[]");
-      const updated = local.map(i =>
-        (i.productId === details.id) ? { ...i, quantity: newQty } : i
+      const updated = local.map((i) =>
+        i.productId === details.id ? { ...i, quantity: newQty } : i,
       );
       localStorage.setItem("cart", JSON.stringify(updated));
       setCart(updated);
@@ -62,13 +64,15 @@ export default function CartPage() {
         const token = await user.getIdToken();
         const res = await axios.delete(
           `${import.meta.env.VITE_API_URL}/cart/remove/${details.id}`,
-          { headers: { Authorization: `Bearer ${token}` } }
+          { headers: { Authorization: `Bearer ${token}` } },
         );
         setCart(res.data.cart?.items || []);
-      } catch (err) { console.error(err); }
+      } catch (err) {
+        console.error(err);
+      }
     } else {
       const local = JSON.parse(localStorage.getItem("cart") || "[]");
-      const updated = local.filter(i => i.productId !== details.id);
+      const updated = local.filter((i) => i.productId !== details.id);
       localStorage.setItem("cart", JSON.stringify(updated));
       setCart(updated);
     }
@@ -80,29 +84,34 @@ export default function CartPage() {
     if (user) {
       try {
         const token = await user.getIdToken();
-        await axios.delete(`${import.meta.env.VITE_API_URL}/cart/clear`,
-          { headers: { Authorization: `Bearer ${token}` } }
-        );
-      } catch (err) { console.error(err); }
+        await axios.delete(`${import.meta.env.VITE_API_URL}/cart/clear`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      } catch (err) {
+        console.error(err);
+      }
     } else {
       localStorage.removeItem("cart");
     }
     setCart([]);
   };
 
-  if (cart.length === 0) return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 mt-16">
-      <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center mb-6">
-        <ShoppingBag size={40} className="text-gray-300" />
+  if (cart.length === 0)
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 mt-16">
+        <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center mb-6">
+          <ShoppingBag size={40} className="text-gray-300" />
+        </div>
+        <h2 className="text-2xl font-bold font-serif mb-2">কার্ট খালি</h2>
+        <p className="text-gray-400 text-sm mb-6">কোনো পণ্য যোগ করা হয়নি</p>
+        <button
+          onClick={() => navigate("/shop")}
+          className="px-8 py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition flex items-center gap-2"
+        >
+          পণ্য যোগ করুন <ArrowRight size={16} />
+        </button>
       </div>
-      <h2 className="text-2xl font-bold font-serif mb-2">কার্ট খালি</h2>
-      <p className="text-gray-400 text-sm mb-6">কোনো পণ্য যোগ করা হয়নি</p>
-      <button onClick={() => navigate("/shop")}
-        className="px-8 py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition flex items-center gap-2">
-        Shop করুন <ArrowRight size={16} />
-      </button>
-    </div>
-  );
+    );
 
   return (
     <div className="min-h-screen bg-gray-50 mt-16">
@@ -113,8 +122,10 @@ export default function CartPage() {
             <h1 className="text-2xl font-bold font-serif">আমার কার্ট</h1>
             <p className="text-sm text-gray-500 mt-1">{cartCount} টি পণ্য</p>
           </div>
-          <button onClick={clearAll}
-            className="text-xs text-red-400 hover:text-red-600 flex items-center gap-1 transition">
+          <button
+            onClick={clearAll}
+            className="text-xs text-red-400 hover:text-red-600 flex items-center gap-1 transition"
+          >
             <Trash2 size={13} /> সব মুছুন
           </button>
         </div>
@@ -127,15 +138,21 @@ export default function CartPage() {
               const isUpdating = updating === details.id;
 
               return (
-                <div key={i}
-                  className={`bg-white rounded-2xl p-4 border border-gray-100 flex gap-4 transition-opacity ${isUpdating ? "opacity-50" : ""}`}>
+                <div
+                  key={i}
+                  className={`bg-white rounded-2xl p-4 border border-gray-100 flex gap-4 transition-opacity ${isUpdating ? "opacity-50" : ""}`}
+                >
                   {/* Image */}
                   <div
                     onClick={() => navigate(`/product/${details.id}`)}
-                    className="w-20 h-20 rounded-xl overflow-hidden bg-gray-50 border flex-shrink-0 cursor-pointer"
+                    className="w-20 h-20 rounded-xl overflow-hidden bg-gray-50 border shrink-0 cursor-pointer"
                   >
                     {details.image ? (
-                      <img src={details.image} alt={details.name} className="w-full h-full object-cover" />
+                      <img
+                        src={details.image}
+                        alt={details.name}
+                        className="w-full h-full object-cover"
+                      />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-gray-200">
                         <ShoppingBag size={24} />
@@ -151,7 +168,9 @@ export default function CartPage() {
                     >
                       {details.name}
                     </p>
-                    <p className="text-base font-bold mt-1">৳{details.price.toLocaleString()}</p>
+                    <p className="text-base font-bold mt-1">
+                      ৳{details.price.toLocaleString()}
+                    </p>
 
                     {/* Qty controls */}
                     <div className="flex items-center gap-2 mt-3">
@@ -162,7 +181,9 @@ export default function CartPage() {
                       >
                         <Minus size={13} />
                       </button>
-                      <span className="w-8 text-center text-sm font-semibold">{item.quantity}</span>
+                      <span className="w-8 text-center text-sm font-semibold">
+                        {item.quantity}
+                      </span>
                       <button
                         onClick={() => updateQty(item, item.quantity + 1)}
                         disabled={isUpdating || item.quantity >= details.stock}
@@ -174,7 +195,7 @@ export default function CartPage() {
                   </div>
 
                   {/* Right side */}
-                  <div className="flex flex-col items-end justify-between flex-shrink-0">
+                  <div className="flex flex-col items-end justify-between shrink-0">
                     <button
                       onClick={() => removeItem(item)}
                       disabled={isUpdating}
@@ -195,25 +216,16 @@ export default function CartPage() {
           <div className="space-y-4">
             <div className="bg-white rounded-2xl p-5 border border-gray-100 sticky top-24">
               <h2 className="font-semibold mb-4">অর্ডার সারসংক্ষেপ</h2>
-
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between text-gray-500">
-                  <span>সাবটোটাল ({cartCount} পণ্য)</span>
+                  <span>মোট পণ্য ({cartCount}টি)</span>
                   <span>৳{subtotal.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-gray-500">
-                  <span>ডেলিভারি চার্জ</span>
-                  <span className={shippingCost === 0 ? "text-green-500 font-medium" : ""}>
-                    {shippingCost === 0 ? "ফ্রি" : `৳${shippingCost}`}
-                  </span>
-                </div>
-                {subtotal < 1000 && (
-                  <p className="text-xs text-amber-600 bg-amber-50 p-2 rounded-lg">
-                    ৳{(1000 - subtotal).toLocaleString()} বেশি কিনলে ফ্রি ডেলিভারি পাবেন!
-                  </p>
-                )}
+                <p className="text-xs text-gray-400 bg-gray-50 p-2 rounded-lg text-center">
+                  ডেলিভারি চার্জ চেকআউটে যোগ হবে
+                </p>
                 <div className="flex justify-between font-bold text-base border-t pt-3">
-                  <span>মোট</span>
+                  <span>সাবটোটাল</span>
                   <span>৳{total.toLocaleString()}</span>
                 </div>
               </div>

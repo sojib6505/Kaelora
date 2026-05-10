@@ -83,6 +83,13 @@ export default function ProductDetails() {
   const shortText = words.slice(0, 20).join(" ");
   const isLong = words.length > 20;
 
+  const phoneNumber = "8801601794299";
+  const message = "Hello! I want to order from your website.";
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
   return (
     <>
       <ScrollToTop />
@@ -156,10 +163,11 @@ export default function ProductDetails() {
                 : "Out of Stock"}
             </p>
 
-            {/* Tags */}
-            {product.tags?.length > 0 && (
+            {/* size */}
+            {product.size?.length > 0 && (
               <div className="flex flex-wrap gap-2">
-                {product.tags.map((tag, i) => (
+                <span className="font-serif font-semibold">SIZE:</span>
+                {product.size.map((tag, i) => (
                   <span
                     key={i}
                     className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full"
@@ -212,10 +220,16 @@ export default function ProductDetails() {
                 <MdPayment size={20} /> Buy Now
               </button>
 
-              <button className="flex justify-center items-center gap-2 border py-3 rounded-lg hover:bg-red-primary hover:text-white transition">
+              <a 
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center gap-2 border py-3 rounded-lg hover:bg-red-primary hover:text-white transition">
                 <BsWhatsapp size={20} /> WhatsApp
-              </button>
-              <button className="flex justify-center gap-2 bg-gray-light hover:bg-red-primary text-white py-3 rounded-lg transition">
+              </a>
+              <button
+                onClick={() => window.location.href = "tel:+8801601794299"}
+              className="flex justify-center gap-2 bg-gray-light hover:bg-red-primary text-white py-3 rounded-lg transition">
                 <Phone size={18} /> Contact
               </button>
             </div>

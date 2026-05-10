@@ -9,14 +9,14 @@ export default function AllProduct() {
   const [totalPages, setTotalPages] = useState(1);
   const [total, setTotal] = useState(0);
   const [searchInput, setSearchInput] = useState("");
-  const [search, setSearch] = useState(""); // ✅ debounced value
+  const [search, setSearch] = useState(""); 
   const [category, setCategory] = useState("");
   const [sort, setSort] = useState("newest");
   const [categories, setCategories] = useState([]);
 
   const itemsPerPage = 16;
 
-  // ✅ Debounce — 500ms পর search set হবে
+  // Debounce — 500ms after search set 
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearch(searchInput);

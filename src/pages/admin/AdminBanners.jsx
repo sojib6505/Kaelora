@@ -86,7 +86,7 @@ export function AdminBanners() {
           )}
           {banners.map((banner) => (
             <div key={banner._id} className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
-              <div className="relative aspect-[3/1] bg-gray-100">
+              <div className="relative aspect-3/1 bg-gray-100">
                 <img src={banner.image?.url} alt="Banner" className="w-full h-full object-cover" />
                 {!banner.isActive && (
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
