@@ -61,7 +61,7 @@ export default function Navbar() {
           {/* LOGO */}
           <div className="text-xl flex items-center gap-2 font-bold md:flex-1 text-center lg:text-left">
             <Logo />
-            <h2 className="font-semibold text-xl font-serif uppercase">
+            <h2 className="font-semibold text-sm md:text-xl font-serif uppercase">
               AK Signature Wear
             </h2>
           </div>
