@@ -14,7 +14,7 @@ import {
 import { Link } from "react-router";
 import Logo from "../../utils/Logo";
 export default function Footer() {
-  const phoneNumber = "8801601794299";
+  const phoneNumber = "8801621234852";
   const message = "Hello! I want to order from your website.";
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -42,7 +42,7 @@ export default function Footer() {
 
             <p className="flex items-center gap-2 text-sm font-semibold">
               <FaPhoneAlt />
-              +8801601794299
+              +8801621-234852
             </p>
 
             {/* Social */}

@@ -84,7 +84,7 @@ export default function Registration() {
             </h2>
             <div className="flex justify-center items-center">
               <Logo />
-              <p className="text-xl font-bold font-serif">KAELORA</p>
+              {/* <p className="text-xl font-bold font-serif">KAELORA</p> */}
             </div>
           </div>
 

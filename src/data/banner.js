@@ -1,6 +1,6 @@
-import hero_1 from '../assets/images/hero_1.png'
-import hero_2 from '../assets/images/hero_2.png'
-import hero_3 from '../assets/images/hero_3.png'
+import hero_1 from '../assets/images/AkBanner1.jpeg'
+import hero_2 from '../assets/images/AkBanner2.png'
+import hero_3 from '../assets/images/AkBanner3.png'
 const banners = [
   {
     id: 1,
