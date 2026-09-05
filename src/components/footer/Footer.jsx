@@ -47,7 +47,7 @@ export default function Footer() {
 
             {/* Social */}
             <div className="flex gap-4 text-lg mt-4">
-             <a href="https://www.facebook.com/kaelorabd"> <FaFacebookF className="cursor-pointer hover:text-white" /></a>
+             <a href="https://www.facebook.com/aksignaturewear"> <FaFacebookF className="cursor-pointer hover:text-white" /></a>
               <a href="https://www.instagram.com/kaelorabd"><FaInstagram className="cursor-pointer hover:text-white" /></a>
               <a href="https://www.tiktok.com/@kaelorabd"><FaTiktok className="cursor-pointer hover:text-white" /></a>
             </div>

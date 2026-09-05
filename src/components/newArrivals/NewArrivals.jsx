@@ -25,7 +25,7 @@ export default function NewArrivals() {
   );
 
   if (loading) return (
-    <section className="mt-10">
+    <section className="mt-10 mb-10">
       <div className="text-center mb-10">
         <p className="text-xs font-semibold tracking-[0.25em] text-amber-600 uppercase mb-2">Just Dropped</p>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">New Arrival</h2>
