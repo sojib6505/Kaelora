@@ -26,7 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "/shop" },
-    { name: "About", path: "/" },
+    { name: "About", path: "/about" },
     { name: "Contact", path: "/" },
   ];
 
@@ -48,7 +48,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-white fixed top-0 left-0 z-50 shadow-sm">
+    <nav className="w-full bg-black text-white fixed top-0 left-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* LEFT (Mobile Menu Icon) */}

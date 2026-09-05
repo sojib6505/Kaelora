@@ -16,6 +16,7 @@ import MyOrders from "../pages/order/MyOrders";
 import ProductDetails from "../pages/productDetail/ProductDetails";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import ErrorPage from "../pages/ErrorPage";
+import About from "../pages/about/About";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
       { path: "/product/:id", Component:ProductDetails },
       { path: "/checkout", Component: Checkout },
       { path: "/cart", Component: CartPage },
-      { path: "/orders", Component: MyOrders }
+      { path: "/orders", Component: MyOrders },
+      { path:"/about" , Component: About}
     ],
   },
   {
