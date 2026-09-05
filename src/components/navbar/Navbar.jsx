@@ -48,12 +48,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-black text-white fixed top-0 left-0 z-50 shadow-sm">
+    <nav className="w-full bg-black md:text-white fixed top-0 left-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* LEFT (Mobile Menu Icon) */}
           <div className="lg:hidden">
-            <button onClick={() => setOpen(true)}>
+            <button className="text-white" onClick={() => setOpen(true)}>
               <Menu size={26} />
             </button>
           </div>
@@ -61,13 +61,13 @@ export default function Navbar() {
           {/* LOGO */}
           <div className="text-xl flex items-center gap-2 font-bold md:flex-1 text-center lg:text-left">
             <Logo />
-            <h2 className="font-semibold text-sm md:text-xl font-serif uppercase">
+            <h2 className="font-semibold text-white text-sm md:text-xl font-serif uppercase">
               AK Signature Wear
             </h2>
           </div>
 
           {/* NAV ITEMS (Desktop) */}
-          <div className="hidden md:flex flex-1 justify-start gap-6">
+          <div className="hidden md:flex flex-1 text-white justify-start gap-6">
             {navLinks.map((item) => (
               <Link
                 key={item.name}
@@ -80,7 +80,7 @@ export default function Navbar() {
           </div>
 
           {/* RIGHT ICONS */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 text-white">
             <Link to="/orders">
               <Package2 className="cursor-pointer hover:text-red-primary" />
             </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
 
                 {/* Dropdown */}
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-red-500 py-2 z-50">
+                  <div className="absolute right-0 mt-2 w-48 bg-white  rounded-xl shadow-lg border border-red-500 py-2 z-50">
                     <div className="px-4 py-2 border-b">
                       <p className="font-semibold text-sm truncate">
                         {user.displayName || "User"}
@@ -124,7 +124,7 @@ export default function Navbar() {
                     <Link
                       to="/orders"
                       onClick={() => setDropdownOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-50"
+                      className="flex items-center text-white gap-2 px-4 py-2 text-sm hover:bg-gray-50"
                     >
                       <Package size={15} /> My Orders
                     </Link>
