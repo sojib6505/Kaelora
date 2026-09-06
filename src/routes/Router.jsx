@@ -17,6 +17,7 @@ import ProductDetails from "../pages/productDetail/ProductDetails";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import ErrorPage from "../pages/ErrorPage";
 import About from "../pages/about/About";
+import Contact from "../pages/contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
       { path: "/checkout", Component: Checkout },
       { path: "/cart", Component: CartPage },
       { path: "/orders", Component: MyOrders },
-      { path:"/about" , Component: About}
+      { path:"/about" , Component: About},
+      {path:"/contact" , Component: Contact}
     ],
   },
   {

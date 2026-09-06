@@ -27,7 +27,7 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Shop", path: "/shop" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/" },
+    { name: "Contact", path: "/contact" },
   ];
 
   // Dropdown বাইরে click করলে বন্ধ হবে
@@ -48,9 +48,9 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-black md:text-white fixed top-0 left-0 z-50 shadow-sm">
+    <nav className="w-full bg-black  fixed top-0 left-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 md:text-white ">
           {/* LEFT (Mobile Menu Icon) */}
           <div className="lg:hidden">
             <button className="text-white" onClick={() => setOpen(true)}>
@@ -117,14 +117,14 @@ export default function Navbar() {
                     <Link
                       to="/profile"
                       onClick={() => setDropdownOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-50"
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                     >
                       <User size={15} /> Profile
                     </Link>
                     <Link
                       to="/orders"
                       onClick={() => setDropdownOpen(false)}
-                      className="flex items-center text-white gap-2 px-4 py-2 text-sm hover:bg-gray-50"
+                      className="flex items-center text-gray-700 gap-2 px-4 py-2 text-sm hover:bg-gray-50"
                     >
                       <Package size={15} /> My Orders
                     </Link>
@@ -157,24 +157,24 @@ export default function Navbar() {
 
       {/* MOBILE SIDEBAR */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
+        className={`fixed top-0 left-0 h-full w-64 bg-white  shadow-lg transform ${
           open ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 z-50`}
       >
-        <div className="flex justify-between items-center p-4 border-b">
+        <div className="flex justify-between items-center  p-4 border-b">
           <h2 className="text-lg font-bold">Menu</h2>
           <button onClick={() => setOpen(false)}>
             <X />
           </button>
         </div>
 
-        <div className="flex flex-col p-4 gap-4">
+        <div className="flex flex-col p-4 gap-4 ">
           {navLinks.map((item) => (
             <Link
               key={item.name}
               to={item.path}
               onClick={() => setOpen(false)}
-              className="text-lg hover:text-red-primary font-serif font-normal"
+              className="text-lg  hover:text-red-primary font-serif font-normal"
             >
               {item.name}
             </Link>
@@ -182,21 +182,21 @@ export default function Navbar() {
 
           {/* Mobile এ user info */}
           {user ? (
-            <div className="border-t pt-4 mt-2">
+            <div className="border-t pt-4 mt-2 ">
               <p className="font-semibold text-sm mb-3 truncate">
                 {user.displayName || user.email}
               </p>
               <Link
                 to="/profile"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 text-sm py-2 hover:text-red-primary"
+                className="flex items-center gap-2 text-sm py-2 text-black hover:text-red-primary"
               >
                 <User size={15} /> Profile
               </Link>
               <Link
                 to="/orders"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 text-sm py-2 hover:text-red-primary"
+                className="flex items-center gap-2 text-sm py-2 text-black hover:text-red-primary"
               >
                 <Package size={15} /> My Orders
               </Link>

@@ -1,4 +1,3 @@
-import { FeatherIcon } from "lucide-react";
 import HeroSlider from "../../components/hero/HeroSlider";
 import NewArrivals from "../../components/newArrivals/NewArrivals";
 import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
@@ -12,7 +11,7 @@ export default function Home() {
         <ScrollToTop/>
         <HeroSlider/>
         <NewArrivals/>
-        <CategoryProducts/>     
+        <CategoryProducts/>
         <Features/>   
     </div>
   )
